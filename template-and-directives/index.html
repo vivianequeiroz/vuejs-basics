@@ -10,12 +10,19 @@
   <body>
     <div id="app">
       <h1>{{title}}</h1>
-      <p>{{data.content}}</p>
-      <p>Square area: {{side * side}}</p>
-      <p>Square perimeter: {{side * 4}}</p>
-      <p>
-        Course already available? {{ paid ? 'Yes, enjoy it!' : 'Not yet ;('}}
-      </p>
+      <div v-show="paid" :style="{background: colorSelected}">
+        <p>{{data.content}}</p>
+        <p>Square area: {{side * side}}</p>
+        <p>Square perimeter: {{side * 4}}</p>
+        <p>
+          Course already available? {{ paid ? 'Yes, enjoy it!' : 'Not yet ;('}}
+        </p>
+        <input v-model="colorSelected" type="color" /> {{colorSelected}}
+      </div>
+      <a v-bind:href="hrefUrl">{{hrefUrl}}</a>
+      <a v-bind:href="hrefUrl">{{hrefUrl}}</a>
+      <!-- It doesn't work:
+      <a href="{{href}}">{{href}}</a> -->
     </div>
 
     <script>
@@ -28,6 +35,8 @@
           },
           side: 4,
           paid: true,
+          hrefUrl: "https://vuejs.org/",
+          colorSelected: "#35E",
         },
       });
     </script>
