@@ -8,21 +8,21 @@
     <title>Vue.js basic syntax</title>
   </head>
   <body>
-    <div id="app"><p>{{nome}}, {{idade}}, {{faculdade.curso}}</p></div>
+    <div id="app"><p>{{name}}, {{age}}, {{university.course}}</p></div>
 
     <script>
       const vm = new Vue({
         el: "#app",
         data: {
-          nome: "Viviane",
-          idade: 21,
-          faculdade: {
-            curso: "ADS",
+          name: "Viviane",
+          age: 21,
+          university: {
+            course: "ADS",
           },
         },
       });
 
-      vm.nome = "João";
+      vm.name = "João";
       console.log(vm);
     </script>
   </body>

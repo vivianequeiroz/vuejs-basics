@@ -9,24 +9,21 @@
   </head>
   <body>
     <div id="app">
-      <p>Camisas: R$ <span>{{preco}}</span></p>
-      <button @click="total++" type="button">Adicionar</button>
-      <button @click="total--">Remover</button>
+      <p>T-shirts: R$ <span>{{price}}</span></p>
+      <button @click="total++" type="button">Add</button>
+      <button @click="total--">Remove</button>
       <span></span>
-      <p>Total = <span>{{preco * total}}</span></p>
+      <p>Total = <span>{{price * total}}</span></p>
     </div>
 
     <script>
       const vm = new Vue({
         el: "#app",
         data: {
-          preco: 49,
+          price: 49,
           total: 0,
         },
       });
-
-      vm.nome = "João";
-      console.log(vm);
     </script>
   </body>
 </html>
